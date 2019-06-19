@@ -116,6 +116,18 @@ public class UsuarioServiceImpl implements UserDetailsService,UsuarioService {
 		return usuarioDao.lista(id);
 	}
 
+	@Override
+	public List<Map<String, Object>> listarCuenta(long id) {
+		// TODO Auto-generated method stub
+		return usuarioDao.ListaCuentas(id);
+	}
+
+	@Override
+	public List<Map<String, Object>> listarArea(long id) {
+		// TODO Auto-generated method stub
+		return usuarioDao.ListaAreas(id);
+	}
+
 
 	
 

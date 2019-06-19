@@ -25,5 +25,9 @@ public interface UsuarioService {
 	
 	Object findDataByIdUsuario(Long id);
 	List<Map<String,Object>> lista(@Param("id") long id);
+	List<Map<String,Object>> listarCuenta(@Param("id") long id);
+	List<Map<String,Object>> listarArea(@Param("id") long id);
+
+
 
 }

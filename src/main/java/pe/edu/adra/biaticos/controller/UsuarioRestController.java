@@ -36,4 +36,16 @@ public class UsuarioRestController {
 		
 		return usuarioService.lista(id);
 	}
+	
+	@GetMapping("/cu/{id}")
+	public List<Map<String, Object>> listarCuentas(@PathVariable Long id){
+		
+		return usuarioService.listarCuenta(id);
+	}
+	
+	@GetMapping("/ar/{id}")
+	public List<Map<String, Object>> listarAreas(@PathVariable Long id){
+		
+		return usuarioService.listarArea(id);
+	}
 }

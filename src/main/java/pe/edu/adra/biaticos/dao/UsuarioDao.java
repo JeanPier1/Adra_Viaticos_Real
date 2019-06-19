@@ -46,5 +46,17 @@ public interface UsuarioDao extends JpaRepository<Usuario, Long> {
 	@Query(value="select (ar.nombre) as Area, se.sed_id, (se.nombre) as Sede ,cu.banco,cu.numero "
 			+ "from users_sede_area  usa, sede_area sea, area ar, sede se, cuenta cu where usa.sea_id=sea.sa_id and sea.area_id=ar.area_id and sea.sed_id=se.sed_id and cu.sed_id=se.sed_id  and usa.usuario_id=:id",nativeQuery = true)
 	public List<Map<String,Object>> lista(@Param("id") long id);
+	
+	
+	@Query(value = "select c.* from cuenta c, sede se, sede_area sear,  users_sede_area use_are,usuario user\r\n" + 
+			"where  se.sed_id= c.sed_id and sear.sed_id=se.sed_id  \r\n" + 
+			"and use_are.usuario_id=user.usu_id and use_are.sea_id=sear.sa_id and user.usu_id=:id", nativeQuery = true)
+	public List<Map<String,Object>> ListaCuentas(@Param("id") long id);
+
+	@Query(value = "select ar.* \r\n" + 
+			"from sede_area sedare, area ar, users_sede_area usersea, usuario usere\r\n" + 
+			"where sedare.area_id= ar.area_id and usersea.sea_id=sedare.sa_id  \r\n" + 
+			"and usersea.sea_id=sedare.sa_id and usere.usu_id = usersea.usuario_id and usere.usu_id=:id",nativeQuery = true)
+	public List<Map<String,Object>> ListaAreas(@Param("id") long id);
 
 }
