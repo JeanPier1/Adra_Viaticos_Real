@@ -25,5 +25,7 @@ public class GastoRestController {
 		return this.viajeService.findViajeById(id);
 	}
 	
+	
+	
 
 }

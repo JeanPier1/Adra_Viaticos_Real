@@ -20,7 +20,7 @@ public class AdraViajesApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		String password = "123456";
+		String password = "123";
 		
 		for (int i = 0; i < 4; i++) {
 			String passwordBycytp = passednco.encode(password);
