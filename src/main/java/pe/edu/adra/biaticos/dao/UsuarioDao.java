@@ -59,4 +59,13 @@ public interface UsuarioDao extends JpaRepository<Usuario, Long> {
 			"and usersea.sea_id=sedare.sa_id and usere.usu_id = usersea.usuario_id and usere.usu_id=:id",nativeQuery = true)
 	public List<Map<String,Object>> ListaAreas(@Param("id") long id);
 
+	@Query(value = "select r.rol_id from rol r, usuario us, usuarios_roles usaa\r\n" + 
+			"where r.rol_id=usaa.role_id and usaa.usuario_id=us.usu_id and usu_id=:id", nativeQuery = true)
+	public List<Map<String,Object>> Listarolid(@Param("id") long id);
+	
+
+	@Query(value = "select men.* from permiso_rol pers, rol r, permiso per, menu men\r\n" + 
+			"where pers.per_id=per.per_id and pers.rol_id=r.rol_id and per.per_id=men.per_id\r\n" + 
+			"and r.rol_id=:id", nativeQuery = true)
+	public List<Map<String,Object>> ListaPermisos(@Param("id") long id);
 }

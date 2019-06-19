@@ -27,7 +27,7 @@ public interface UsuarioService {
 	List<Map<String,Object>> lista(@Param("id") long id);
 	List<Map<String,Object>> listarCuenta(@Param("id") long id);
 	List<Map<String,Object>> listarArea(@Param("id") long id);
-
-
+	List<Map<String,Object>> listarRolid(@Param("id") long id);
+	List<Map<String,Object>> listarPermisos(@Param("id") long id);
 
 }

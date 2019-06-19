@@ -48,4 +48,13 @@ public class UsuarioRestController {
 		
 		return usuarioService.listarArea(id);
 	}
+	
+	@GetMapping("/rol/{id}")
+	public List<Map<String, Object>> listarRolId(@PathVariable Long id){
+		return usuarioService.listarRolid(id);
+	}
+	@GetMapping("/permis/{id}")
+	public List<Map<String, Object>> listarPermiso(@PathVariable Long id){
+		return usuarioService.listarPermisos(id);
+	}
 }

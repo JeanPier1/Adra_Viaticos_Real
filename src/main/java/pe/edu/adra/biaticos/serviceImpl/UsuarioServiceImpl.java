@@ -128,6 +128,18 @@ public class UsuarioServiceImpl implements UserDetailsService,UsuarioService {
 		return usuarioDao.ListaAreas(id);
 	}
 
+	@Override
+	public List<Map<String, Object>> listarRolid(long id) {
+		// TODO Auto-generated method stub
+		return usuarioDao.Listarolid(id);
+	}
+
+	@Override
+	public List<Map<String, Object>> listarPermisos(long id) {
+		// TODO Auto-generated method stub
+		return usuarioDao.ListaPermisos(id);
+	}
+
 
 	
 
