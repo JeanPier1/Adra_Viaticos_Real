@@ -20,14 +20,13 @@ public class GastoDetalleCategoria {
 	private Long idGastoDetalleCategoria;
 	private String monto;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="gast_id", nullable = false)
-	private Gasto gasto;
+	@JoinColumn(name="gad_id", nullable = false)
+	private GastoDetalle gastoDetalle;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="cat_id", nullable = false)
 	private Categoria categoria;
 
 	public GastoDetalleCategoria() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public GastoDetalleCategoria(Long idGastoDetalleCategoria) {
@@ -50,12 +49,12 @@ public class GastoDetalleCategoria {
 		this.monto = monto;
 	}
 
-	public Gasto getGasto() {
-		return gasto;
+	public GastoDetalle getGastoDetalle() {
+		return gastoDetalle;
 	}
 
-	public void setGasto(Gasto gasto) {
-		this.gasto = gasto;
+	public void setGastoDetalle(GastoDetalle gastoDetalle) {
+		this.gastoDetalle = gastoDetalle;
 	}
 
 	public Categoria getCategoria() {

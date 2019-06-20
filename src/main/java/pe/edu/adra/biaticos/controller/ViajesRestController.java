@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.edu.adra.biaticos.entities.Gastos.Categoria;
 import pe.edu.adra.biaticos.entities.Viajes.Actividad;
 import pe.edu.adra.biaticos.entities.Viajes.Pasaje;
 import pe.edu.adra.biaticos.entities.Viajes.PasajeDetalle;
@@ -17,6 +18,7 @@ import pe.edu.adra.biaticos.entities.Viajes.Presupuesto;
 import pe.edu.adra.biaticos.entities.Viajes.Solicitado;
 import pe.edu.adra.biaticos.entities.Viajes.Viaje;
 import pe.edu.adra.biaticos.service.ActividadService;
+import pe.edu.adra.biaticos.service.CategoriaService;
 import pe.edu.adra.biaticos.service.PasajeDetalleService;
 import pe.edu.adra.biaticos.service.PasajeService;
 import pe.edu.adra.biaticos.service.PresupuestoService;
@@ -46,6 +48,9 @@ public class ViajesRestController {
 	
 	@Autowired
 	private PresupuestoService presupuestoService;
+	
+	@Autowired
+	private CategoriaService categoriaService;
 	
 	/*
 	 * 	@PostMapping("/pas/solicitado")
@@ -86,6 +91,11 @@ public class ViajesRestController {
 	@PostMapping("/presupuesto")
 	public List<Presupuesto> guardarPresupuesto(@RequestBody List<Presupuesto> presupuesto){
 		return presupuestoService.saveAllActividad(presupuesto);
-	}			
+	}
+	
+	@GetMapping("/categorias-padre")
+	public List<Categoria> buscarCategoriasPadre() {
+		return categoriaService.findCategoriasPadre();
+	}
 	
 }

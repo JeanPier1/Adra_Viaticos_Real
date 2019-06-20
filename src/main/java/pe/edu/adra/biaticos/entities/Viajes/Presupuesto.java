@@ -28,9 +28,7 @@ public class Presupuesto {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="via_id", nullable = false)
 	private Viaje viaje;
-	
-
-	
+		
 	public Presupuesto() {
 	}
 

@@ -20,7 +20,7 @@ public class Categoria {
 	private Long idCategoria;
 	private String nombre;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="gast_id", nullable = false)
+	@JoinColumn(name="cat_child", nullable = false)
 	private Categoria categoriaChid;
 	
 	public Categoria() {
