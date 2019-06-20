@@ -30,22 +30,22 @@ import pe.edu.adra.biaticos.service.ViajeService;
 public class ViajesRestController {
 	
 	@Autowired
-	private ActividadService actividadSer;
+	private ActividadService actividadService;
 	
 	@Autowired
-	private ViajeService viajeser;
+	private ViajeService viajeService;
 
 	@Autowired
-	private PasajeDetalleService pasjaDetallSer;
+	private PasajeDetalleService pasajeDetalleService;
 	
 	@Autowired
-	private PasajeService pasjServi;
+	private PasajeService pasajeService;
 	
 	@Autowired
-	private SolicitadoService solicitudServi;
+	private SolicitadoService solicitudService;
 	
 	@Autowired
-	private PresupuestoService presu;
+	private PresupuestoService presupuestoService;
 	
 	/*
 	 * 	@PostMapping("/pas/solicitado")
@@ -54,36 +54,38 @@ public class ViajesRestController {
 	}*/
 	@GetMapping("/lis")
 	public List<Viaje> vista(){
-		return viajeser.readViajes();
+		return viajeService.readViajes();
 	}
 	
-	@PostMapping("/crearvia")
-	public Viaje guardarPasaje(@RequestBody Viaje via) {
-		return viajeser.saveViaje(via);
+	@PostMapping("/viaje")
+	public Viaje guardarPasaje(@RequestBody Viaje viaje) {
+		return viajeService.saveViaje(viaje);
 	}
 	
 	@PostMapping("/actividad")
-	public List<Actividad> guardarActividad(@RequestBody List<Actividad> activ){
-		return actividadSer.saveAllActividad(activ);
-	}
-	@PostMapping("/pasaje")
-	public List<Pasaje> guardarPasaje(@RequestBody List<Pasaje> pass){
-		return pasjServi.saveAllActividad(pass);
-	}
-	@PostMapping("/solicitud")
-	public List<Solicitado> guardarSolicitud(@RequestBody List<Solicitado> solic){
-		return solicitudServi.saveAllSolicitado(solic);
+	public List<Actividad> guardarActividad(@RequestBody List<Actividad> actividad){
+		System.out.println(actividad.size());
+		return actividadService.saveAllActividad(actividad);
 	}
 	
-	@PostMapping("/presupuesto")
-	public List<Presupuesto> guardarPresupuesto(@RequestBody List<Presupuesto> pres){
-		return presu.saveAllActividad(pres);
+	@PostMapping("/pasaje")
+	public Pasaje guardarPasaje(@RequestBody Pasaje pasaje){
+		return pasajeService.savePasaje(pasaje);
 	}
 	
 	@PostMapping("/pasaje-detalle")
-	public List<PasajeDetalle> guardarPasajeDetalle(@RequestBody List<PasajeDetalle> pasDetalle){
-		return pasjaDetallSer.saveAllPasajeDetalle(pasDetalle);
+	public List<PasajeDetalle> guardarPasajeDetalle(@RequestBody List<PasajeDetalle> pasajeDetalle){
+		return pasajeDetalleService.saveAllPasajeDetalle(pasajeDetalle);
 	}
 	
+	@PostMapping("/solicitud")
+	public List<Solicitado> guardarSolicitado(@RequestBody List<Solicitado> solicitud){
+		return solicitudService.saveAllSolicitado(solicitud);
+	}
+	
+	@PostMapping("/presupuesto")
+	public List<Presupuesto> guardarPresupuesto(@RequestBody List<Presupuesto> presupuesto){
+		return presupuestoService.saveAllActividad(presupuesto);
+	}			
 	
 }

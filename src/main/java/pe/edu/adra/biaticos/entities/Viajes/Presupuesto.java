@@ -19,9 +19,12 @@ public class Presupuesto {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="pres_id")
 	private Long idPresupuesto;
-	private String gasto;
-	private String detalle;
+	private Double detalle;
 	private Double monto;
+	private Double saldo;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="cat_id", nullable = false)
+	private Categoria categoria;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="via_id", nullable = false)
 	private Viaje viaje;
@@ -43,12 +46,12 @@ public class Presupuesto {
 		this.idPresupuesto = idPresupuesto;
 	}
 
-	public String getGasto() {
-		return gasto;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setGasto(String gasto) {
-		this.gasto = gasto;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
 	public String getDetalle() {
@@ -73,6 +76,14 @@ public class Presupuesto {
 
 	public void setViaje(Viaje viaje) {
 		this.viaje = viaje;
+	}
+
+	public Double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
 	}
 		
 }
