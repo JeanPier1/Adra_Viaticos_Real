@@ -25,6 +25,8 @@ public class Menu {
 	@Column(name="nombre")
 	private String nombre;
 	
+	private String rutas;
+	
 	@NotFound(action = NotFoundAction.IGNORE)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="per_id",nullable = false)
@@ -73,5 +75,12 @@ public class Menu {
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
-	
+
+	public String getRutas() {
+		return rutas;
+	}
+
+	public void setRutas(String rutas) {
+		this.rutas = rutas;
+	}
 }
