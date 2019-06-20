@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.edu.adra.biaticos.dao.CuentaDao;
+import pe.edu.adra.biaticos.entities.Login.Cuenta;
+import pe.edu.adra.biaticos.service.CuentaService;
 import pe.edu.adra.biaticos.service.UsuarioService;
 
 
@@ -20,6 +23,9 @@ public class UsuarioRestController {
 
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@Autowired
+	private CuentaService cuentaService;
 	
 //	@GetMapping("/r/{id}")
 //	public Persona BuscarPersona(@PathVariable Long id) {
@@ -33,19 +39,16 @@ public class UsuarioRestController {
 
 	@GetMapping("/{id}")
 	public List<Map<String, Object>> lista(@PathVariable Long id){
-		
 		return usuarioService.lista(id);
 	}
 	
 	@GetMapping("/cu/{id}")
-	public List<Map<String, Object>> listarCuentas(@PathVariable Long id){
-		
-		return usuarioService.listarCuenta(id);
+	public List<Cuenta> listarCuentas(@PathVariable Long id){
+		return cuentaService.findCuentasByUsuarioId(id);
 	}
 	
 	@GetMapping("/ar/{id}")
-	public List<Map<String, Object>> listarAreas(@PathVariable Long id){
-		
+	public List<Map<String, Object>> listarAreas(@PathVariable Long id){	
 		return usuarioService.listarArea(id);
 	}
 	

@@ -18,6 +18,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import pe.edu.adra.biaticos.dao.UsuarioDao;
+import pe.edu.adra.biaticos.entities.Login.Cuenta;
 import pe.edu.adra.biaticos.entities.Login.Persona;
 import pe.edu.adra.biaticos.entities.Login.Usuario;
 import pe.edu.adra.biaticos.service.UsuarioService;
@@ -114,12 +115,6 @@ public class UsuarioServiceImpl implements UserDetailsService,UsuarioService {
 	public List<Map<String, Object>> lista(long id) {
 		// TODO Auto-generated method stub
 		return usuarioDao.lista(id);
-	}
-
-	@Override
-	public List<Map<String, Object>> listarCuenta(long id) {
-		// TODO Auto-generated method stub
-		return usuarioDao.ListaCuentas(id);
 	}
 
 	@Override

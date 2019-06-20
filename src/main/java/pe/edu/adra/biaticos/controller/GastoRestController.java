@@ -4,10 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.edu.adra.biaticos.entities.Gastos.Gasto;
 import pe.edu.adra.biaticos.entities.Viajes.Viaje;
+import pe.edu.adra.biaticos.service.GastoService;
 import pe.edu.adra.biaticos.service.ViajeService;
 
 
@@ -20,9 +24,17 @@ public class GastoRestController {
 	@Autowired
 	private ViajeService viajeService;
 	
+	@Autowired
+	private GastoService gastoService;
+	 
 	@GetMapping("/viaje/{id}")
 	public Viaje BuscarViajeById(@PathVariable Long id) {
 		return this.viajeService.findViajeById(id);
+	}
+	
+	@PostMapping("/gasto")
+	public Gasto GuardarGasto(@RequestBody Gasto gasto) {
+		return this.gastoService.saveGasto(gasto);
 	}
 	
 	
