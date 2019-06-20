@@ -26,4 +26,10 @@ public class PasajeServiceImpl implements PasajeService {
 		return this.pasajeDao.findAll();
 	}
 
+	@Override
+	public List<Pasaje> saveAllActividad(List<Pasaje> pass) {
+		// TODO Auto-generated method stub
+		return pasajeDao.saveAll(pass);
+	}
+
 }

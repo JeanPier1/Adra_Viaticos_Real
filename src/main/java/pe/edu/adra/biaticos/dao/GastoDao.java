@@ -8,5 +8,7 @@ import pe.edu.adra.biaticos.entities.Gastos.Gasto;
 
 @Repository
 public interface GastoDao extends JpaRepository<Gasto, Long> {
+	
+	
 
 }

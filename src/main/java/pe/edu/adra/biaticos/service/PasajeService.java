@@ -10,4 +10,6 @@ public interface PasajeService {
 	
 	List<Pasaje> findAllPasaje();
 	
+	List<Pasaje> saveAllActividad(List<Pasaje> pass);	
+
 }

@@ -26,4 +26,10 @@ public class PresupuestoServiceImpl implements PresupuestoService {
 		return this.presupuestoDao.findAll();
 	}
 
+	@Override
+	public List<Presupuesto> saveAllActividad(List<Presupuesto> pass) {
+		// TODO Auto-generated method stub
+		return presupuestoDao.saveAll(pass);
+	}
+
 }
