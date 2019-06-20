@@ -44,9 +44,6 @@ public class SolicitudRestController {
 	@Autowired
 	private PersonaService personaService;
 	
-
-	
-	
 	@PostMapping("/actividad")
 	public List<Actividad> guardarActividad(@RequestBody List<Actividad> actividades) {
 		return this.actividadService.saveAllActividad(actividades);

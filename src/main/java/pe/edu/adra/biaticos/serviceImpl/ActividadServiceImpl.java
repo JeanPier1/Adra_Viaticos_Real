@@ -17,17 +17,17 @@ public class ActividadServiceImpl implements ActividadService {
 
 	@Override
 	public Actividad saveActividad(Actividad actividad) {
-		return this.actividadDao.save(actividad);
+		return actividadDao.save(actividad);
 	}
 
 	@Override
 	public List<Actividad> findAllActividad() {
-		return this.actividadDao.findAll();
+		return actividadDao.findAll();
 	}
 
 	@Override
 	public List<Actividad> saveAllActividad(List<Actividad> actividades) {
-		return this.saveAllActividad(actividades);
+		return actividadDao.saveAll(actividades);
 	}
 	
 }
