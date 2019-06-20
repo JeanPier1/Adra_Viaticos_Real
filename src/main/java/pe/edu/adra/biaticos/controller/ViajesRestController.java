@@ -25,7 +25,7 @@ import pe.edu.adra.biaticos.service.ViajeService;
 
 @RestController
 @CrossOrigin(origins= {"*"})
-@RequestMapping("/viajes")
+@RequestMapping("/V")
 public class ViajesRestController {
 	
 	@Autowired
@@ -57,26 +57,26 @@ public class ViajesRestController {
 		return viajeser.saveViaje(via);
 	}
 	
-	@PostMapping("/creaactivi")
-	public List<Actividad> guardarActivi(@RequestBody List<Actividad> activ){
+	@PostMapping("/actividad")
+	public List<Actividad> guardarActividad(@RequestBody List<Actividad> activ){
 		return actividadSer.saveAllActividad(activ);
 	}
-	@PostMapping("/creapasaje")
+	@PostMapping("/pasaje")
 	public List<Pasaje> guardarPasaje(@RequestBody List<Pasaje> pass){
 		return pasjServi.saveAllActividad(pass);
 	}
-	@PostMapping("/crearsoli")
-	public List<Solicitado> guardarSolici(@RequestBody List<Solicitado> solic){
+	@PostMapping("/solicitud")
+	public List<Solicitado> guardarSolicitud(@RequestBody List<Solicitado> solic){
 		return solicitudServi.saveAllSolicitado(solic);
 	}
 	
-	@PostMapping("/crearpresupuesto")
-	public List<Presupuesto> guardarPresu(@RequestBody List<Presupuesto> pres){
+	@PostMapping("/presupuesto")
+	public List<Presupuesto> guardarPresupuesto(@RequestBody List<Presupuesto> pres){
 		return presu.saveAllActividad(pres);
 	}
 	
-	@PostMapping("/crearpasajdet")
-	public List<PasajeDetalle> guardarPasaDe(@RequestBody List<PasajeDetalle> pasDetalle){
+	@PostMapping("/pasaje-detalle")
+	public List<PasajeDetalle> guardarPasajeDetalle(@RequestBody List<PasajeDetalle> pasDetalle){
 		return pasjaDetallSer.saveAllPasajeDetalle(pasDetalle);
 	}
 	
