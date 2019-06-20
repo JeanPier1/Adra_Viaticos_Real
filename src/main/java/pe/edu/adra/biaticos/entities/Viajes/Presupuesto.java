@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import pe.edu.adra.biaticos.entities.Gastos.Categoria;
+
 @Entity
 @Table(name="presupuesto")
 public class Presupuesto {
@@ -23,6 +25,8 @@ public class Presupuesto {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="via_id", nullable = false)
 	private Viaje viaje;
+	
+
 	
 	public Presupuesto() {
 	}
