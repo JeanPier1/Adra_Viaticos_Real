@@ -81,9 +81,6 @@ public class ViajesRestController {
 	@PostMapping("/presupuesto")
 	public List<Presupuesto> guardarPresupuesto(@RequestBody List<Presupuesto> presupuesto){
 		return presupuestoService.saveAllActividad(presupuesto);
-	}
-	
-	
-	
+	}			
 	
 }

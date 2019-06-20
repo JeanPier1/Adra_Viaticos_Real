@@ -10,7 +10,7 @@ public interface PresupuestoService {
 	Presupuesto savePresupuesto(Presupuesto presupuesto);
 	
 	List<Presupuesto> findAllPresupuesto();
-	List<Presupuesto> saveAllActividad(List<Presupuesto> pass);	
+	List<Presupuesto> saveAllActividad(List<Presupuesto> presupuestos);	
 
 	
 }
