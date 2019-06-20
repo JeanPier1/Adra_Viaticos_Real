@@ -19,7 +19,7 @@ public class Presupuesto {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="pres_id")
 	private Long idPresupuesto;
-	private String detalle;
+	private Double detalle;
 	private Double monto;
 	private Double saldo;
 	@ManyToOne(fetch = FetchType.LAZY)
