@@ -54,16 +54,16 @@ public class Presupuesto {
 		this.categoria = categoria;
 	}
 
-	public Double getMonto() {
-		return monto;
-	}
-
-	public Double getDetalle() {
+	public String getDetalle() {
 		return detalle;
 	}
 
-	public void setDetalle(Double detalle) {
+	public void setDetalle(String detalle) {
 		this.detalle = detalle;
+	}
+
+	public Double getMonto() {
+		return monto;
 	}
 
 	public void setMonto(Double monto) {
