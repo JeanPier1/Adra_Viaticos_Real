@@ -29,17 +29,18 @@ public class Viaje {
 	private Long idViaje;
 	private String motivo;
 	private String sede;
+	private String contacto;
 	@Column(name="areacosto")
 	private String areaCosto;
 	private String moneda;
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
+	@Column(name="pres_total")
+	private Double presupuestoTotal;
 	@Column(name="fecha_inicio")
 	private String fechaIncio;
 	@Column(name="fecha_fin")
 	private String fechaFin;
-	@Column(name="pres_total")
-	private Double presupuestoTotal;
 	private int estado;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="cue_id", nullable = false)
@@ -48,7 +49,6 @@ public class Viaje {
 	@JoinColumn(name="per_id", nullable = false)
 	private Persona persona;
 	
-
 	@PrePersist
 	public void prePersist() {
 		this.fecha = new Date();
@@ -155,6 +155,14 @@ public class Viaje {
 
 	public void setPersona(Persona persona) {
 		this.persona = persona;
+	}
+
+	public String getContacto() {
+		return contacto;
+	}
+
+	public void setContacto(String contacto) {
+		this.contacto = contacto;
 	}
 	
 }
