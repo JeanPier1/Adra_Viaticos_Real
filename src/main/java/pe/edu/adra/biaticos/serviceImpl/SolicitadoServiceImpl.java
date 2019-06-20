@@ -17,17 +17,17 @@ public class SolicitadoServiceImpl implements SolicitadoService {
 	
 	@Override
 	public Solicitado saveSolicitado(Solicitado solicitado) {
-		return this.solicitadoDao.save(solicitado);
+		return solicitadoDao.save(solicitado);
 	}
 
 	@Override
 	public List<Solicitado> findAllSolicitado() {
-		return this.solicitadoDao.findAll();
+		return solicitadoDao.findAll();
 	}
 
 	@Override
 	public List<Solicitado> saveAllSolicitado(List<Solicitado> solicitados) {
-		return this.solicitadoDao.saveAll(solicitados);
+		return solicitadoDao.saveAll(solicitados);
 	}
 
 }

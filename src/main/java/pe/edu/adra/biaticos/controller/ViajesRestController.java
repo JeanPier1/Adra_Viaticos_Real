@@ -54,7 +54,7 @@ public class ViajesRestController {
 	}*/
 	@GetMapping("/lis")
 	public List<Viaje> vista(){
-		return viajeser.readViajes();
+		return viajeService.readViajes();
 	}
 	
 	@PostMapping("/viaje")
