@@ -52,11 +52,11 @@ public class Presupuesto {
 		this.categoria = categoria;
 	}
 
-	public String getDetalle() {
+	public Double getDetalle() {
 		return detalle;
 	}
 
-	public void setDetalle(String detalle) {
+	public void setDetalle(Double detalle) {
 		this.detalle = detalle;
 	}
 
