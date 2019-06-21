@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pe.edu.adra.biaticos.dao.CuentaDao;
 import pe.edu.adra.biaticos.entities.Login.Cuenta;
 import pe.edu.adra.biaticos.service.CuentaService;
 import pe.edu.adra.biaticos.service.UsuarioService;

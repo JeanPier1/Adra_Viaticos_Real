@@ -10,7 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import pe.edu.upeu.spring.entities.Viaje.Viaje;
+import pe.edu.adra.biaticos.entities.Viajes.Viaje;
+
 
 @Entity
 @Table(name="informe")
