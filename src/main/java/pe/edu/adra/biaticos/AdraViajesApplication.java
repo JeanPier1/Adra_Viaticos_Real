@@ -1,22 +1,22 @@
 package pe.edu.adra.biaticos;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
-public class AdraViajesApplication implements CommandLineRunner {
+public class AdraViajesApplication /*implements CommandLineRunner*/ {
 
-	@Autowired
-	private BCryptPasswordEncoder passednco;
+//	@Autowired
+//	private BCryptPasswordEncoder passednco;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AdraViajesApplication.class, args);
 	}
 
-	@Override
+/*	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
@@ -26,6 +26,6 @@ public class AdraViajesApplication implements CommandLineRunner {
 			String passwordBycytp = passednco.encode(password);
 			System.out.println(passwordBycytp);
 		}
-	}
+	}*/
 
 }
