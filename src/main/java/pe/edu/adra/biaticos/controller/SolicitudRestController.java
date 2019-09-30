@@ -1,4 +1,4 @@
-package pe.edu.adra.biaticos.controller;
+	package pe.edu.adra.biaticos.controller;
 
 import java.util.List;
 
@@ -16,11 +16,13 @@ import pe.edu.adra.biaticos.entities.Viajes.Actividad;
 import pe.edu.adra.biaticos.entities.Viajes.Pasaje;
 import pe.edu.adra.biaticos.entities.Viajes.PasajeDetalle;
 import pe.edu.adra.biaticos.entities.Viajes.Solicitado;
+import pe.edu.adra.biaticos.entities.Viajes.Viaje;
 import pe.edu.adra.biaticos.service.ActividadService;
 import pe.edu.adra.biaticos.service.PasajeDetalleService;
 import pe.edu.adra.biaticos.service.PasajeService;
 import pe.edu.adra.biaticos.service.PersonaService;
 import pe.edu.adra.biaticos.service.SolicitadoService;
+import pe.edu.adra.biaticos.service.ViajeService;
 
 
 @RestController
@@ -42,6 +44,14 @@ public class SolicitudRestController {
 	
 	@Autowired
 	private PersonaService personaService;
+	
+	@Autowired
+	private ViajeService viajeService;
+	
+	@GetMapping("/list/{id}")
+	public List<Viaje> listarSolicitudes(@PathVariable("id") Long id){
+		return viajeService.readAllSolicitudes(id);
+	}
 	
 	@PostMapping("/actividad")
 	public List<Actividad> guardarActividad(@RequestBody List<Actividad> actividades) {

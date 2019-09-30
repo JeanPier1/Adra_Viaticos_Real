@@ -20,16 +20,19 @@ public class ViajeServiceImpl  implements ViajeService{
 		return this.viajeDao.save(viaje);
 	}
 
-	
 	@Override
-	public List<Viaje> readViajes() {
-		return this.viajeDao.findAll();
+	public List<Viaje> readAllViajes(Long id) {
+		return this.viajeDao.findViajeSuccess(id);
 	}
-
 
 	@Override
 	public Viaje findViajeById(Long id) {
 		return this.viajeDao.findById(id).orElse(null);
+	}
+
+	@Override
+	public List<Viaje> readAllSolicitudes(Long id) {
+		return this.viajeDao.findAllById(id);
 	}
 	
 }
