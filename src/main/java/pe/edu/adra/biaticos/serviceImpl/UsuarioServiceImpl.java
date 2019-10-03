@@ -2,20 +2,20 @@ package pe.edu.adra.biaticos.serviceImpl;
 
 import java.util.List;
 import java.util.Map;
-//import java.util.stream.Collectors;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-/*import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-*/import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service;
 
 import pe.edu.adra.biaticos.dao.UsuarioDao;
 //import pe.edu.adra.biaticos.entities.Login.Cuenta;
@@ -26,7 +26,7 @@ import pe.edu.adra.biaticos.service.UsuarioService;
 
 @Service
 @Transactional
-public class UsuarioServiceImpl implements /*UserDetailsService,*/UsuarioService {
+public class UsuarioServiceImpl implements UserDetailsService,UsuarioService {
 	
 	@Autowired
 	private UsuarioDao usuarioDao;
@@ -87,7 +87,7 @@ public class UsuarioServiceImpl implements /*UserDetailsService,*/UsuarioService
 	private Logger logger = LoggerFactory.getLogger(UsuarioServiceImpl.class); 
 
 
-/*	@Override
+	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		Usuario user=usuarioDao.findByUsername(username);
@@ -104,7 +104,7 @@ public class UsuarioServiceImpl implements /*UserDetailsService,*/UsuarioService
 				.collect(Collectors.toList());
 		return new User(user.getUsername(), user.getPassword(), user.getEnable(),true, true, true, authorities);
 	}
-*/
+
 	@Override
 	public Object findDataByIdUsuario(Long id) {
 		// TODO Auto-generated method stub

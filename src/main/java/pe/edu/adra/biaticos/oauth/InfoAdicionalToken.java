@@ -1,5 +1,5 @@
 package pe.edu.adra.biaticos.oauth;
-/*
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,15 +12,14 @@ import org.springframework.stereotype.Component;
 
 import pe.edu.adra.biaticos.entities.Login.Usuario;
 import pe.edu.adra.biaticos.service.UsuarioService;
-*/
 
-//@Component
-public class InfoAdicionalToken /* implements TokenEnhancer*/ {
+@Component
+public class InfoAdicionalToken implements TokenEnhancer {
 	
-//	@Autowired
-//	private UsuarioService unser;
+	@Autowired
+	private UsuarioService unser;
 
-/*	@Override
+	@Override
 	public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
 		Usuario usi=unser.findByUsername(authentication.getName());
 		Map<String, Object> info = new HashMap<>();	
@@ -33,5 +32,5 @@ public class InfoAdicionalToken /* implements TokenEnhancer*/ {
 		((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);
 		return accessToken;
 	}
-*/
+
 }

@@ -1,5 +1,5 @@
 package pe.edu.adra.biaticos.oauth;
-/*
+
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,12 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
-*/
-//@Configuration
-//@EnableAuthorizationServer
-public class AuthorizationServerConfig /*extends AuthorizationServerConfigurerAdapter*/{
 
-	/*@Autowired
+@Configuration
+@EnableAuthorizationServer
+public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter{
+
+	@Autowired
 	private BCryptPasswordEncoder passwoerd;
 	
 	@Autowired
@@ -71,5 +71,5 @@ public class AuthorizationServerConfig /*extends AuthorizationServerConfigurerAd
 		jwtAccessTokenConverter.setSigningKey(JwtConfig.RSA_PRIVADA);
 		jwtAccessTokenConverter.setVerifierKey(JwtConfig.RSA_PUBLICA);
 		return jwtAccessTokenConverter;
-	}*/
+	}
 }
