@@ -1,6 +1,7 @@
 package pe.edu.adra.biaticos.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.edu.adra.biaticos.dao.GastoDao;
 import pe.edu.adra.biaticos.entities.Gastos.Gasto;
 import pe.edu.adra.biaticos.entities.Gastos.GastoDetalle;
 import pe.edu.adra.biaticos.entities.Gastos.GastoDetalleCategoria;
@@ -37,6 +39,12 @@ public class GastoRestController {
 	@Autowired
 	private GastoDetalleCategoriaService gastoDetalleCategoriaService;
 	  
+	
+	//Service dao nativa
+	
+	@Autowired
+	private GastoDao gastoDao;
+	
 	@GetMapping("/viaje/{id}")
 	public Viaje BuscarViajeById(@PathVariable Long id) {
 		return this.viajeService.findViajeById(id);
@@ -56,6 +64,21 @@ public class GastoRestController {
 	public List<GastoDetalleCategoria> GuardarGastoDetalleCategoria(@RequestBody List<GastoDetalleCategoria> gastoDetalleCategoria) {
 		return gastoDetalleCategoriaService.saveAllGastoDetalleCategoria(gastoDetalleCategoria);
 	}
+	
+	@GetMapping("/viaje/asa/{idviajes}")
+	public List<Map<String, Object>> listaMax(@PathVariable Long idviajes){
+		return gastoDao.listaMax(idviajes);
+	}
+	@GetMapping("/viaje/idgastos/{idviajes}")
+	public List<Map<String, Object>> listaidgasto(@PathVariable Long idviajes){
+		return gastoDao.listaidgasto(idviajes);
+	}
+	
+	@GetMapping("/viaje/parametros/{idviajes}/{idgasto}")
+	public List<Map<String, Object>> listaparametros(@PathVariable Long idviajes,@PathVariable Long idgasto){
+		return gastoDao.listaparametros(idviajes, idgasto);
+	}
+	
 	
 
 }
